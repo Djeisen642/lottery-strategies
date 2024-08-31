@@ -1,9 +1,9 @@
 import {
-  GamblingStrategy,
+  LotteryStrategy,
   RandomStrategy,
   PreviousNumberStrategy,
   StaticNumberStrategy,
-  IncrementDecrementStrategy,
+  IncrementStrategy,
   MostUsedNumberStrategy,
   LeastUsedNumberStrategy,
 } from '../strategies';
@@ -12,7 +12,7 @@ describe('GamblingStrategies', () => {
   const maxWinningNumber = 10;
 
   describe('RandomStrategy', () => {
-    let strategy: GamblingStrategy;
+    let strategy: LotteryStrategy;
 
     beforeEach(() => {
       strategy = new RandomStrategy(maxWinningNumber);
@@ -26,7 +26,7 @@ describe('GamblingStrategies', () => {
   });
 
   describe('PreviousNumberStrategy', () => {
-    let strategy: GamblingStrategy;
+    let strategy: LotteryStrategy;
 
     beforeEach(() => {
       strategy = new PreviousNumberStrategy(maxWinningNumber);
@@ -47,7 +47,7 @@ describe('GamblingStrategies', () => {
   });
 
   describe('StaticNumberStrategy', () => {
-    let strategy: GamblingStrategy;
+    let strategy: LotteryStrategy;
 
     beforeEach(() => {
       strategy = new StaticNumberStrategy(maxWinningNumber);
@@ -60,11 +60,11 @@ describe('GamblingStrategies', () => {
     });
   });
 
-  describe('IncrementDecrementStrategy', () => {
-    let strategy: GamblingStrategy;
+  describe('IncrementStrategy', () => {
+    let strategy: LotteryStrategy;
 
     beforeEach(() => {
-      strategy = new IncrementDecrementStrategy(maxWinningNumber);
+      strategy = new IncrementStrategy(maxWinningNumber);
     });
 
     it('should increment the guess and wrap around', () => {
@@ -78,7 +78,7 @@ describe('GamblingStrategies', () => {
   });
 
   describe('MostUsedNumberStrategy', () => {
-    let strategy: GamblingStrategy;
+    let strategy: LotteryStrategy;
 
     beforeEach(() => {
       strategy = new MostUsedNumberStrategy(maxWinningNumber);
@@ -94,7 +94,7 @@ describe('GamblingStrategies', () => {
     });
   });
   describe('LeastUsedNumberStrategy', () => {
-    let strategy: GamblingStrategy;
+    let strategy: LotteryStrategy;
 
     beforeEach(() => {
       strategy = new LeastUsedNumberStrategy(maxWinningNumber);

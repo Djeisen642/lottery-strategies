@@ -1,8 +1,8 @@
-export abstract class GamblingStrategy {
+export abstract class LotteryStrategy {
   abstract getNextGuess(previousResult?: number): number;
 }
 
-export class RandomStrategy extends GamblingStrategy {
+export class RandomStrategy extends LotteryStrategy {
   constructor(private readonly _maxWinningNumber: number) {
     super();
   }
@@ -12,7 +12,7 @@ export class RandomStrategy extends GamblingStrategy {
   }
 }
 
-export class PreviousNumberStrategy extends GamblingStrategy {
+export class PreviousNumberStrategy extends LotteryStrategy {
   constructor(private readonly _maxWinningNumber: number) {
     super();
   }
@@ -24,7 +24,7 @@ export class PreviousNumberStrategy extends GamblingStrategy {
   }
 }
 
-export class MostUsedNumberStrategy extends GamblingStrategy {
+export class MostUsedNumberStrategy extends LotteryStrategy {
   private readonly _frequencyMap: Map<number, number> = new Map();
 
   constructor(private readonly _maxWinningNumber: number) {
@@ -55,7 +55,7 @@ export class MostUsedNumberStrategy extends GamblingStrategy {
     return matchHighestFrequency[0];
   }
 }
-export class LeastUsedNumberStrategy extends GamblingStrategy {
+export class LeastUsedNumberStrategy extends LotteryStrategy {
   private readonly _frequencyMap: Map<number, number> = new Map();
 
   constructor(private readonly _maxWinningNumber: number) {
@@ -91,7 +91,7 @@ export class LeastUsedNumberStrategy extends GamblingStrategy {
   }
 }
 
-export class StaticNumberStrategy extends GamblingStrategy {
+export class StaticNumberStrategy extends LotteryStrategy {
   private readonly staticNumber: number;
 
   constructor(private readonly _maxWinningNumber: number) {
@@ -104,7 +104,7 @@ export class StaticNumberStrategy extends GamblingStrategy {
   }
 }
 
-export class IncrementDecrementStrategy extends GamblingStrategy {
+export class IncrementStrategy extends LotteryStrategy {
   private currentGuess: number;
 
   constructor(private readonly _maxWinningNumber: number) {

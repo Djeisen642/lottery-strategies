@@ -1,21 +1,21 @@
 import {
-  type GamblingStrategy,
+  type LotteryStrategy,
   RandomStrategy,
   PreviousNumberStrategy,
   StaticNumberStrategy,
-  IncrementDecrementStrategy,
+  IncrementStrategy,
   MostUsedNumberStrategy,
   LeastUsedNumberStrategy,
 } from './strategies';
 
 class Gambler {
-  private strategy: GamblingStrategy;
+  private strategy: LotteryStrategy;
 
-  constructor(strategy: GamblingStrategy) {
+  constructor(strategy: LotteryStrategy) {
     this.strategy = strategy;
   }
 
-  setStrategy(strategy: GamblingStrategy): void {
+  setStrategy(strategy: LotteryStrategy): void {
     this.strategy = strategy;
   }
 
@@ -73,7 +73,7 @@ type StrategyStats = {
 
 // Function to run simulations and calculate various statistics
 function runSimulations(
-  strategy: GamblingStrategy,
+  strategy: LotteryStrategy,
   maxWinningNumber: number,
   numSimulations: number = 1000
 ): StrategyStats {
@@ -119,9 +119,7 @@ const numSimulations = 100000;
 const randomStrategy = new RandomStrategy(maxWinningNumber);
 const previousNumberStrategy = new PreviousNumberStrategy(maxWinningNumber);
 const staticNumberStrategy = new StaticNumberStrategy(maxWinningNumber);
-const incrementDecrementStrategy = new IncrementDecrementStrategy(
-  maxWinningNumber
-);
+const IncrementStrategy = new IncrementStrategy(maxWinningNumber);
 const mostUsedNumberStrategy = new MostUsedNumberStrategy(maxWinningNumber);
 const leastUsedNumberStrategy = new LeastUsedNumberStrategy(maxWinningNumber);
 
@@ -129,7 +127,7 @@ const strategies = [
   { name: 'Random', strategy: randomStrategy },
   { name: 'Previous Number', strategy: previousNumberStrategy },
   { name: 'Static Number', strategy: staticNumberStrategy },
-  { name: 'Increment/Decrement', strategy: incrementDecrementStrategy },
+  { name: 'Increment/Decrement', strategy: IncrementStrategy },
   { name: 'Most Used Number', strategy: mostUsedNumberStrategy },
   { name: 'Least Used Number', strategy: leastUsedNumberStrategy },
 ];

@@ -1,33 +1,14 @@
-# typescript-template
+# Lottery Strategies
 
-Template using the following tools
+This is just for fun. Running it, you'll see that there's no statistically significant difference between the winning strategies and the losing ones
 
-- node 20 (https://github.com/nodejs/release#release-schedule)
-- nvm (https://github.com/nvm-sh/nvm) or volta (https://volta.sh/)
-- yarn (https://yarnpkg.com/)
-- typescript (https://www.typescriptlang.org/)
-- prettier (https://prettier.io/)
-- eslint (https://eslint.org/)
-- jest (https://jestjs.io/)
-- husky (https://typicode.github.io/husky/#/)
-- commitlint (https://commitlint.js.org/#/)
-- dependabot (https://docs.github.com/en/code-security/dependabot)
-- codeql (https://codeql.github.com/)
+This was built with the help of Gemini Cloud Code in VS Code.
 
-Assumes that nvm (or volta) and yarn are installed
+Includes the following strategies:
 
-Assumes that JetBrains IntelliJ (https://www.jetbrains.com/idea/) or Visual Studio Code (https://code.visualstudio.com/) is the IDE
-
-## Commands
-
-run `nvm install` or `volta install node` to ensure that the correct node version is installed
-
-run `yarn set version berry` or `volta install yarn` to use the latest yarn version
-
-run `yarn` to install packages
-
-run `yarn test` to run tests
-
-run `yarn lint` to run linter
-
-run `yarn up-i` to update packages
+- RandomStrategy - Always pick a random number
+- PreviousNumberStrategy - Always pick the previous number
+- MostUsedNumberStrategy - Always pick the most used number
+- LeastUsedNumberStrategy - Always pick the least used number
+- StaticNumberStrategy - Never change your number
+- IncrementStrategy - Always pick a number 1 greater than your last number
