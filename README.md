@@ -1,6 +1,6 @@
 # Lottery Strategies
 
-This is just for fun. Running it, you'll see that there's no statistically significant difference between the winning strategies and the losing ones
+This is just for fun. Running it, you'll see that there's no statistically significant difference between the winning strategy and the losing ones.
 
 This was built with the help of Gemini Cloud Code in VS Code.
 
